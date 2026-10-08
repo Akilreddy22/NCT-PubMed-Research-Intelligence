@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - Research Intelligence</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body>
+<header class="top"><h1>NCT &amp; PubMed Research Intelligence</h1>
+  <nav><a class="active" href="/">Dashboard</a><a href="/nct">NCT Changes</a><a href="/pubmed">PubMed</a><a href="/trials">Trial Comparator</a></nav></header>
+<main>
+  <h2>Dashboard</h2>
+  <p class="sub">Clinical research monitoring, analysis &amp; trial comparison. <span id="groq" class="pill"></span></p>
+  <div class="grid3">
+    <div class="card"><h3>NCT Studies</h3><div class="stat" id="nct">-</div><p class="meta">Tracked pages with saved versions</p>
+      <a class="btn" href="/nct">Compare NCT Versions</a></div>
+    <div class="card"><h3>PubMed Articles</h3><div class="stat" id="pub">-</div><p class="meta">Articles saved from PubMed</p>
+      <a class="btn" href="/pubmed">Search PubMed</a></div>
+    <div class="card"><h3>Clinical Trials</h3><div class="stat" id="trial">-</div><p class="meta">Trials saved for comparison</p>
+      <a class="btn" href="/trials">Compare Clinical Trials</a></div>
+  </div>
+  <div class="card"><h3>How it works</h3>
+    <p><span class="pill nonai">Python only</span> HTML parsing, data extraction, normalization, version comparison, database, filtering.</p>
+    <p><span class="pill ai">Groq AI</span> Article summaries, trial understanding, figure interpretation.</p></div>
+</main>
+<script src="/static/js/common.js"></script>
+<script>
+(async () => {
+  try {
+    const s = await api("/api/stats");
+    document.getElementById("nct").textContent = s.nct_studies;
+    document.getElementById("pub").textContent = s.pubmed_articles;
+    document.getElementById("trial").textContent = s.clinical_trials;
+    const h = await api("/api/health"), g = document.getElementById("groq");
+    g.textContent = h.groq_configured ? "Groq connected" : "Groq key not set (AI buttons disabled)";
+    g.className = "pill " + (h.groq_configured ? "added" : "modified");
+  } catch (e) { console.log(e); }
+})();
+</script></body></html>

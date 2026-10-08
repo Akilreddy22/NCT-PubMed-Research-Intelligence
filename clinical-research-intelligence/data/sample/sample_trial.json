@@ -1,0 +1,468 @@
+{
+  "_note": "SYNTHETIC demo data in ClinicalTrials.gov API v2 format. NCT IDs and trials are fictional.",
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT99000001",
+          "briefTitle": "Pembrolizumab Versus Chemotherapy in Advanced Melanoma",
+          "officialTitle": "A Phase 3 Study of Pembrolizumab Versus Standard Chemotherapy in Advanced Melanoma",
+          "organization": {
+            "fullName": "Example Oncology Research Group"
+          }
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "startDateStruct": {
+            "date": "2025-04"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2027-03"
+          },
+          "completionDateStruct": {
+            "date": "2027-12"
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-06-03"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": "Example Oncology Research Group"
+          },
+          "collaborators": [
+            {
+              "name": "Demo Cancer Foundation"
+            }
+          ]
+        },
+        "descriptionModule": {
+          "briefSummary": "This study compares pembrolizumab with standard chemotherapy in adults with unresectable or metastatic melanoma.",
+          "detailedDescription": "Participants are randomly assigned to receive either pembrolizumab every 3 weeks or investigator-choice chemotherapy."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Melanoma",
+            "Skin Cancer"
+          ],
+          "keywords": [
+            "PD-1",
+            "immunotherapy"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE3"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 120,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Pembrolizumab",
+              "type": "EXPERIMENTAL",
+              "description": "Pembrolizumab 200 mg IV every 3 weeks",
+              "interventionNames": [
+                "Pembrolizumab"
+              ]
+            },
+            {
+              "label": "Chemotherapy",
+              "type": "ACTIVE_COMPARATOR",
+              "description": "Standard chemotherapy per investigator",
+              "interventionNames": [
+                "Chemotherapy"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Pembrolizumab",
+              "description": "200 mg intravenous every 3 weeks"
+            },
+            {
+              "type": "DRUG",
+              "name": "Chemotherapy",
+              "description": "Investigator-choice, standard dosing"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Progression-free survival",
+              "timeFrame": "Up to 24 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Overall survival",
+              "timeFrame": "Up to 36 months"
+            },
+            {
+              "measure": "Objective response rate",
+              "timeFrame": "Up to 24 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 18-70 years\n* Histologically confirmed unresectable stage III or IV melanoma\n* ECOG performance status 0 or 1\n\nExclusion Criteria:\n\n* Prior anti-PD-1 therapy\n* Active autoimmune disease requiring systemic treatment",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "70 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Example Cancer Center",
+              "city": "Boston",
+              "country": "United States"
+            },
+            {
+              "facility": "Demo University Hospital",
+              "city": "Berlin",
+              "country": "Germany"
+            },
+            {
+              "facility": "Sample Medical Institute",
+              "city": "Tokyo",
+              "country": "Japan"
+            }
+          ],
+          "overallOfficials": [
+            {
+              "name": "Dr. Jane Smith, MD",
+              "role": "PRINCIPAL_INVESTIGATOR",
+              "affiliation": "Example Cancer Center"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT99000002",
+          "briefTitle": "Pembrolizumab Plus Lenvatinib After Prior Therapy in Melanoma",
+          "officialTitle": "A Phase 2 Single-Arm Study of Pembrolizumab Plus Lenvatinib in Previously Treated Advanced Melanoma",
+          "organization": {
+            "fullName": "Sample Medical Institute"
+          }
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "startDateStruct": {
+            "date": "2025-02"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2026-08"
+          },
+          "completionDateStruct": {
+            "date": "2027-02"
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-05-20"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": "Sample Medical Institute"
+          },
+          "collaborators": []
+        },
+        "descriptionModule": {
+          "briefSummary": "This study tests whether adding lenvatinib to pembrolizumab shrinks tumours in adults whose melanoma progressed after earlier immunotherapy.",
+          "detailedDescription": "All participants receive the combination. Tumour response is assessed by imaging every 6 weeks."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Melanoma",
+            "Advanced Melanoma"
+          ],
+          "keywords": [
+            "lenvatinib",
+            "combination therapy"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE2"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Combination",
+              "type": "EXPERIMENTAL",
+              "description": "Pembrolizumab 200 mg IV every 3 weeks plus lenvatinib 20 mg orally once daily",
+              "interventionNames": [
+                "Pembrolizumab",
+                "Lenvatinib"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Pembrolizumab",
+              "description": "200 mg intravenous every 3 weeks"
+            },
+            {
+              "type": "DRUG",
+              "name": "Lenvatinib",
+              "description": "20 mg orally once daily"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Objective response rate",
+              "timeFrame": "Up to 12 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Duration of response",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Progression-free survival",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Number of participants with adverse events",
+              "timeFrame": "Up to 24 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 18 years or older\n* Melanoma that progressed after prior anti-PD-1 therapy\n* Measurable disease\n\nExclusion Criteria:\n\n* Uncontrolled hypertension\n* Significant cardiovascular disease",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Sample Medical Institute",
+              "city": "Tokyo",
+              "country": "Japan"
+            },
+            {
+              "facility": "Demo Clinic",
+              "city": "Osaka",
+              "country": "Japan"
+            }
+          ],
+          "overallOfficials": [
+            {
+              "name": "Dr. Kenji Tanaka, MD",
+              "role": "PRINCIPAL_INVESTIGATOR",
+              "affiliation": "Sample Medical Institute"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT99000003",
+          "briefTitle": "Adjuvant Pembrolizumab With a Personalized Vaccine in Resected Melanoma",
+          "officialTitle": "A Phase 1/2 Randomized Double-Blind Study of Adjuvant Pembrolizumab Plus a Personalized Neoantigen Vaccine Versus Pembrolizumab Plus Placebo in Resected Stage III Melanoma",
+          "organization": {
+            "fullName": "Demo Biotech Inc."
+          }
+        },
+        "statusModule": {
+          "overallStatus": "NOT_YET_RECRUITING",
+          "startDateStruct": {
+            "date": "2025-09"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2028-09"
+          },
+          "completionDateStruct": {
+            "date": "2029-09"
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-06-01"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": "Demo Biotech Inc."
+          },
+          "collaborators": [
+            {
+              "name": "Example Oncology Research Group"
+            }
+          ]
+        },
+        "descriptionModule": {
+          "briefSummary": "This study asks whether a personalized vaccine added to pembrolizumab lowers the chance that melanoma comes back after surgery.",
+          "detailedDescription": "Participants who have had surgery are randomly assigned to pembrolizumab with vaccine or pembrolizumab with placebo."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Melanoma",
+            "Stage III Melanoma"
+          ],
+          "keywords": [
+            "neoantigen",
+            "vaccine",
+            "adjuvant"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "PREVENTION",
+            "maskingInfo": {
+              "masking": "QUADRUPLE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 150,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Vaccine + Pembrolizumab",
+              "type": "EXPERIMENTAL",
+              "description": "Vaccine 1 mg subcutaneous every 3 weeks plus pembrolizumab 200 mg IV every 3 weeks",
+              "interventionNames": [
+                "Personalized vaccine",
+                "Pembrolizumab"
+              ]
+            },
+            {
+              "label": "Placebo + Pembrolizumab",
+              "type": "PLACEBO_COMPARATOR",
+              "description": "Placebo plus pembrolizumab 200 mg IV every 3 weeks",
+              "interventionNames": [
+                "Placebo",
+                "Pembrolizumab"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "BIOLOGICAL",
+              "name": "Personalized vaccine",
+              "description": "1 mg subcutaneous every 3 weeks for 9 doses"
+            },
+            {
+              "type": "DRUG",
+              "name": "Pembrolizumab",
+              "description": "200 mg intravenous every 3 weeks for up to 1 year"
+            },
+            {
+              "type": "OTHER",
+              "name": "Placebo",
+              "description": "Saline injection"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Recurrence-free survival",
+              "timeFrame": "Up to 36 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Distant metastasis-free survival",
+              "timeFrame": "Up to 36 months"
+            },
+            {
+              "measure": "Overall survival",
+              "timeFrame": "Up to 60 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 18 years or older\n* Completely resected stage III melanoma\n* Tumour tissue available for sequencing\n\nExclusion Criteria:\n\n* Prior systemic therapy for melanoma\n* Immunodeficiency or chronic steroid use",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Demo Biotech Research Unit",
+              "city": "San Diego",
+              "country": "United States"
+            },
+            {
+              "facility": "Example Cancer Center",
+              "city": "Boston",
+              "country": "United States"
+            }
+          ],
+          "overallOfficials": [
+            {
+              "name": "Dr. Maria Lopez, MD",
+              "role": "PRINCIPAL_INVESTIGATOR",
+              "affiliation": "Demo Biotech Research Unit"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    }
+  ]
+}

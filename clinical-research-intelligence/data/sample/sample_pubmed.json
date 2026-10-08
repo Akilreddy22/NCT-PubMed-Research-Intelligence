@@ -1,0 +1,93 @@
+{
+  "_note": "SYNTHETIC demo articles (fictional PMIDs) in the same shape produced by parse_pubmed_article().",
+  "query": "cancer immunotherapy",
+  "articles": [
+    {
+      "pmid": "99000001",
+      "title": "Neoadjuvant Immune Checkpoint Blockade in Resectable Melanoma: A Randomized Phase 2 Trial",
+      "authors": [
+        "Anna Rossi",
+        "David Chen",
+        "Priya Nair"
+      ],
+      "abstract": "BACKGROUND: Immune checkpoint inhibitors improve outcomes in advanced cancer, but their role before surgery is unclear. METHODS: In this randomized phase 2 trial, 120 adults with resectable stage III melanoma received either two cycles of neoadjuvant pembrolizumab followed by surgery (n=60) or surgery followed by adjuvant pembrolizumab (n=60). The primary endpoint was event-free survival at 24 months. RESULTS: Event-free survival at 24 months was 72% in the neoadjuvant group and 54% in the adjuvant group (hazard ratio 0.58; 95% CI 0.36-0.93; P=0.02). Grade 3 or higher adverse events occurred in 18% and 15% of patients, respectively. CONCLUSIONS: Neoadjuvant pembrolizumab improved event-free survival compared with adjuvant therapy, with similar toxicity.",
+      "journal": "Journal of Demo Oncology",
+      "publication_date": "2024 Mar 15",
+      "doi": "10.9999/demo.2024.0001",
+      "pmcid": "PMC9900001",
+      "keywords": [
+        "immunotherapy",
+        "melanoma",
+        "neoadjuvant",
+        "pembrolizumab"
+      ],
+      "study_type": "Randomized Controlled Trial",
+      "research_topic": "Melanoma, Immunotherapy",
+      "references": [
+        "Demo A et al. Adjuvant therapy in melanoma. J Demo Med. 2021.",
+        "Sample B et al. PD-1 blockade and survival. Demo Lancet. 2022."
+      ],
+      "full_text": "",
+      "figures": [
+        {
+          "label": "Figure 1",
+          "caption": "Figure 1. CONSORT flow diagram. 150 patients were screened, 120 were randomized (60 to neoadjuvant pembrolizumab, 60 to adjuvant pembrolizumab), and 112 completed the primary analysis.",
+          "image_url": ""
+        },
+        {
+          "label": "Figure 2",
+          "caption": "Figure 2. Kaplan-Meier curves of event-free survival. Event-free survival at 24 months was 72% with neoadjuvant therapy versus 54% with adjuvant therapy (HR 0.58, 95% CI 0.36-0.93, P=0.02).",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "pmid": "99000002",
+      "title": "Combination CAR-T Cell Therapy and PD-1 Blockade in Relapsed B-Cell Lymphoma: A Single-Arm Study",
+      "authors": [
+        "Michael Okafor",
+        "Elena Petrova"
+      ],
+      "abstract": "BACKGROUND: Relapse after CAR-T cell therapy is common. METHODS: In this single-arm phase 1/2 study, 45 patients with relapsed or refractory B-cell lymphoma received CAR-T cells followed by PD-1 blockade. The primary endpoint was safety; the secondary endpoint was complete response rate at 3 months. RESULTS: Complete response at 3 months was 58% (26 of 45). Cytokine release syndrome of grade 3 or higher occurred in 9% of patients. CONCLUSIONS: The combination was feasible and showed encouraging activity; randomized trials are needed.",
+      "journal": "Demo Journal of Hematology",
+      "publication_date": "2023 Nov",
+      "doi": "10.9999/demo.2023.0042",
+      "pmcid": "",
+      "keywords": [
+        "CAR-T",
+        "lymphoma",
+        "PD-1"
+      ],
+      "study_type": "Clinical Trial",
+      "research_topic": "Lymphoma, B-Cell, Immunotherapy",
+      "references": [],
+      "full_text": "",
+      "figures": []
+    },
+    {
+      "pmid": "99000003",
+      "title": "Immune Checkpoint Inhibitors and Immune-Related Adverse Events: A Systematic Review",
+      "authors": [
+        "Sofia Garcia",
+        "Liam O'Brien",
+        "Wei Zhang",
+        "Hannah Muller"
+      ],
+      "abstract": "BACKGROUND: Immune-related adverse events (irAEs) are a major limitation of checkpoint inhibitor therapy. METHODS: We searched three databases and included 38 studies with 9,412 patients. RESULTS: Any-grade irAEs occurred in 66% of patients on combination therapy and 27% on PD-1 monotherapy. Colitis and hepatitis were the most frequent serious events. CONCLUSIONS: Combination regimens carry substantially higher toxicity, and early recognition is important.",
+      "journal": "Demo Reviews in Cancer",
+      "publication_date": "2024 Jan 08",
+      "doi": "10.9999/demo.2024.0007",
+      "pmcid": "",
+      "keywords": [
+        "immune-related adverse events",
+        "checkpoint inhibitors",
+        "systematic review"
+      ],
+      "study_type": "Systematic Review",
+      "research_topic": "Immunotherapy, Adverse Effects",
+      "references": [],
+      "full_text": "",
+      "figures": []
+    }
+  ]
+}

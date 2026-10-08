@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trial Comparator - Research Intelligence</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body>
+<header class="top"><h1>NCT &amp; PubMed Research Intelligence</h1>
+  <nav><a href="/">Dashboard</a><a href="/nct">NCT Changes</a><a href="/pubmed">PubMed</a><a class="active" href="/trials">Trial Comparator</a></nav></header>
+<main>
+  <h2>Clinical Trial Comparator</h2>
+  <p class="sub">Search by drug and indication, pick 2-4 trials, compare them side by side.
+     <span class="pill nonai">Python extracts</span> <span class="pill ai">Groq explains</span></p>
+  <div id="msg" class="msg"></div>
+  <div class="card">
+    <div class="row"><div><label>Drug</label><input type="text" id="drug" value="Pembrolizumab"></div>
+      <div><label>Disease / Indication</label><input type="text" id="indication" value="Melanoma"></div>
+      <div style="flex:0"><button id="btnSearch">Search</button></div></div>
+    <label class="check"><input type="checkbox" id="recent"> Only trials updated in the last 30 days</label>
+    <label class="check"><input type="checkbox" id="sample"> Use sample data (works offline)</label>
+  </div>
+  <div class="card hidden" id="resultsCard"><h3 id="resultsTitle"></h3><div class="scroll"><table id="resultsTable"></table></div>
+    <p><button id="btnAnalyze" class="secondary">1. Explain selected with Groq</button>
+       <button id="btnCompare">2. Compare selected</button></p>
+    <div id="aiBox"></div></div>
+  <div class="card hidden" id="compareCard"><h3>Comparison</h3>
+    <label class="check"><input type="checkbox" id="onlyDiff"> Show only rows that differ</label>
+    <p class="meta">Highlighted rows = the trials differ on this point. Rows marked AI come from Groq.</p>
+    <div class="scroll" id="compareTable"></div></div>
+</main>
+<script src="/static/js/common.js"></script><script src="/static/js/trials.js"></script></body></html>

@@ -1,0 +1,42 @@
+:root { --navy:#14274e; --blue:#2563eb; --bg:#f4f6fb; --card:#fff; --line:#dfe4ee; --text:#1f2937; --muted:#6b7280;
+        --green:#15803d; --greenbg:#dcfce7; --red:#b91c1c; --redbg:#fee2e2; --amber:#92400e; --amberbg:#fef3c7; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+header.top { background:var(--navy); color:#fff; padding:0 24px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
+header.top h1 { font-size:18px; margin:14px 0; }
+header.top nav a { color:#c7d2fe; text-decoration:none; padding:16px 12px; display:inline-block; font-size:14px; }
+header.top nav a:hover, header.top nav a.active { color:#fff; border-bottom:3px solid #60a5fa; }
+main { max-width:1200px; margin:24px auto; padding:0 20px 60px; }
+h2 { margin:0 0 6px; } p.sub { color:var(--muted); margin:0 0 18px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:18px; }
+.card h3 { margin:0 0 10px; font-size:16px; }
+.grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+.stat { font-size:42px; font-weight:700; color:var(--navy); }
+label { display:block; font-size:13px; font-weight:600; margin:10px 0 4px; }
+input[type=text], input[type=number], input[type=file], select { width:100%; padding:9px 10px; border:1px solid #c5ccdb; border-radius:6px; font-size:14px; background:#fff; }
+.row { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; } .row > div { flex:1; min-width:180px; }
+.check { display:flex; gap:6px; align-items:center; font-weight:400; margin-top:8px; } .check input { width:auto; }
+button, a.btn { background:var(--blue); color:#fff; border:0; border-radius:6px; padding:9px 16px; font-size:14px; cursor:pointer; text-decoration:none; display:inline-block; }
+button:hover, a.btn:hover { background:#1d4ed8; } button:disabled { background:#9ca3af; cursor:wait; }
+button.secondary, a.btn.secondary { background:#fff; color:var(--blue); border:1px solid var(--blue); }
+.msg { padding:10px 14px; border-radius:6px; margin:12px 0; font-size:14px; display:none; }
+.msg.error { display:block; background:var(--redbg); color:var(--red); } .msg.ok { display:block; background:var(--greenbg); color:var(--green); }
+.msg.info { display:block; background:#dbeafe; color:#1e40af; }
+.pill { display:inline-block; padding:2px 10px; border-radius:12px; font-size:12px; font-weight:700; text-transform:uppercase; }
+.pill.added { background:var(--greenbg); color:var(--green); } .pill.removed { background:var(--redbg); color:var(--red); }
+.pill.modified { background:var(--amberbg); color:var(--amber); } .pill.unchanged { background:#e5e7eb; color:#4b5563; }
+.pill.ai { background:#ede9fe; color:#5b21b6; } .pill.nonai { background:#e0f2fe; color:#075985; }
+table { border-collapse:collapse; width:100%; font-size:13.5px; }
+th, td { border:1px solid var(--line); padding:8px 10px; vertical-align:top; text-align:left; }
+th { background:#eef2fb; } td pre, .cell { white-space:pre-wrap; font-family:inherit; margin:0; max-height:170px; overflow:auto; }
+tr.modified td.old, tr.removed td.old { background:#fee2e2; } tr.modified td.new, tr.added td.new { background:#dcfce7; }
+.scroll { overflow-x:auto; } .tabs { display:flex; gap:6px; margin:6px 0 12px; }
+.tabs button { background:#e5e7eb; color:#374151; } .tabs button.on { background:var(--navy); color:#fff; }
+.badges span { margin-right:8px; } .hidden { display:none; }
+.article { border-top:1px solid var(--line); padding:12px 0; } .article:first-child { border-top:0; }
+.article h4 { margin:0 0 4px; } .meta { color:var(--muted); font-size:13px; }
+.kv { display:grid; grid-template-columns:170px 1fr; gap:6px 14px; font-size:14px; } .kv b { color:#374151; }
+.diffrow th, .diffrow td { background:#fffbeb; } .diffrow td:first-child { font-weight:700; }
+.notice { font-size:13px; color:var(--muted); background:#f9fafb; border-left:4px solid #9ca3af; padding:8px 12px; margin:10px 0; }
+img.fig { max-width:100%; max-height:280px; border:1px solid var(--line); border-radius:6px; margin-bottom:6px; }
+ul.clean { margin:4px 0 4px 18px; padding:0; }

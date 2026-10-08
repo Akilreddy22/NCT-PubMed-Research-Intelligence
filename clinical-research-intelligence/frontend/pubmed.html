@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PubMed - Research Intelligence</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body>
+<header class="top"><h1>NCT &amp; PubMed Research Intelligence</h1>
+  <nav><a href="/">Dashboard</a><a href="/nct">NCT Changes</a><a class="active" href="/pubmed">PubMed</a><a href="/trials">Trial Comparator</a></nav></header>
+<main>
+  <h2>PubMed Research &amp; Figure Intelligence</h2>
+  <p class="sub">Search PubMed, save articles to SQLite, then ask Groq to summarize them.</p>
+  <div id="msg" class="msg"></div>
+  <div class="card">
+    <div class="row"><div style="flex:3"><label>Research topic</label><input type="text" id="query" placeholder="cancer immunotherapy" value="cancer immunotherapy"></div>
+      <div><label>Max results</label><input type="number" id="max" value="5" min="1" max="25"></div>
+      <div style="flex:0"><button id="btnSearch">Search</button></div></div>
+    <label class="check"><input type="checkbox" id="sample"> Use sample data (works offline)</label>
+  </div>
+  <div class="card hidden" id="resultsCard"><h3 id="resultsTitle">Results</h3><div id="results"></div></div>
+  <div class="card hidden" id="detail"></div>
+</main>
+<script src="/static/js/common.js"></script><script src="/static/js/pubmed.js"></script></body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCT Changes - Research Intelligence</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body>
+<header class="top"><h1>NCT &amp; PubMed Research Intelligence</h1>
+  <nav><a href="/">Dashboard</a><a class="active" href="/nct">NCT Changes</a><a href="/pubmed">PubMed</a><a href="/trials">Trial Comparator</a></nav></header>
+<main>
+  <h2>NCT Change Log &amp; Version Comparison</h2>
+  <p class="sub">Find exactly what changed between two versions of a trial page. Uses plain Python - no AI.</p>
+  <div id="msg" class="msg"></div>
+
+  <div class="card"><h3>Quick demo</h3>
+    <p class="meta">Compares the sample files <code>nct_v1.html</code> and <code>nct_v2.html</code> (works offline).</p>
+    <button id="btnDemo">Run sample comparison</button></div>
+
+  <div class="grid3">
+    <div class="card"><h3>Option A - Upload two HTML versions</h3>
+      <label>Previous version (.html)</label><input type="file" id="filePrev" accept=".html,.htm">
+      <label>Current version (.html)</label><input type="file" id="fileCur" accept=".html,.htm">
+      <label>NCT ID (only if the page has none)</label><input type="text" id="nctManual" placeholder="NCT01234567">
+      <p><button id="btnUpload">Compare files</button></p></div>
+    <div class="card"><h3>Option B - Fetch from URL</h3>
+      <label>ClinicalTrials.gov URL</label><input type="text" id="url" placeholder="https://clinicaltrials.gov/study/NCT01234567">
+      <p><button id="btnFetch">Fetch &amp; compare with previous</button></p>
+      <p class="meta">The first fetch stores version 1. Fetch again later to see what changed.</p></div>
+    <div class="card"><h3>Version history</h3>
+      <label>Tracked study</label><select id="studySelect"><option value="">- select a study -</option></select>
+      <div class="row"><div><label>Previous</label><select id="fromV"></select></div>
+        <div><label>Current</label><select id="toV"></select></div></div>
+      <p><button id="btnVersions">Compare selected versions</button></p></div>
+  </div>
+
+  <div id="result" class="card hidden">
+    <h3 id="resTitle"></h3><div class="badges" id="resBadges"></div>
+    <div class="tabs"><button id="tabLog" class="on">Change log</button><button id="tabSide">Side-by-side</button></div>
+    <div id="viewLog" class="scroll"></div><div id="viewSide" class="scroll hidden"></div>
+  </div>
+
+  <div id="historyCard" class="card hidden"><h3>Detailed change history</h3><div id="history"></div></div>
+</main>
+<script src="/static/js/common.js"></script><script src="/static/js/nct.js"></script></body></html>
