@@ -80,9 +80,11 @@ def get_figures(body: FiguresRequest, db: Session = Depends(get_db)):
         content = ps.get_pmc_content(pub.pmcid)
         if content["full_text"]:
             pub.full_text = content["full_text"]
-        existing = {f.label for f in pub.figures}
+        existing = {f.label: f for f in pub.figures}
         for fig in content["figures"]:
-            if fig["label"] not in existing:
+            if fig["label"] in existing:
+                existing[fig["label"]].image_url = fig["image_url"]      # refresh old/broken links
+            else:
                 pub.figures.append(Figure(label=fig["label"], caption=fig["caption"], image_url=fig["image_url"]))
         db.commit()
         if not content["figures"]:
@@ -101,7 +103,8 @@ def get_figures(body: FiguresRequest, db: Session = Depends(get_db)):
                 downloaded += 1
     db.commit()
     if pub.figures and downloaded == 0 and not any(f.local_path for f in pub.figures):
-        notes.append("Image files could not be downloaded; analysis will use captions only.")
+        notes.append("The server could not download the image files, but the images are linked and shown in "
+                     "your browser. Analysis will use captions only unless a download succeeds.")
     db.refresh(pub)
     return {"pmid": pub.pmid, "figures_found": len(pub.figures), "images_downloaded": downloaded,
             "notes": notes, "article": ps.publication_to_dict(pub)}
@@ -117,6 +120,12 @@ def analyze_figure(body: FigureAnalyzeRequest, db: Session = Depends(get_db)):
     context = f"Title: {pub.title}\nAbstract: {pub.abstract}"
 
     image_bytes, mime = None, "image/jpeg"
+    if fig.image_url and not (fig.local_path and Path(fig.local_path).exists()):
+        data, got_mime = ps.download_image(fig.image_url)          # try again now (disk may have been wiped)
+        if data:
+            ext = got_mime.split("/")[-1] or "jpg"
+            fig.local_path = save_figure(pub.pmid, f"{fig.id}_{fig.label or 'figure'}.{ext}", data)
+            db.commit()
     if fig.local_path and Path(fig.local_path).exists():
         image_bytes = Path(fig.local_path).read_bytes()
         mime = {"png": "image/png", "gif": "image/gif", "webp": "image/webp"}.get(

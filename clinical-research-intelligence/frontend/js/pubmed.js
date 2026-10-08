@@ -27,13 +27,27 @@ function analysisHtml(an) {
     `<b>Model</b><div class="meta">${esc(an.model_used || "")}</div></div>`;
 }
 
+// If an image link fails, try the other PubMed Central mirror once, then give up quietly.
+function imgFallback(img) {
+  const epmc = "https://europepmc.org/articles/", ncbi = "https://pmc.ncbi.nlm.nih.gov/articles/";
+  if (img.dataset.tried) { img.style.display = "none"; return; }
+  img.dataset.tried = "1";
+  if (img.src.startsWith(epmc)) img.src = ncbi + img.src.slice(epmc.length);
+  else if (img.src.startsWith(ncbi)) img.src = epmc + img.src.slice(ncbi.length);
+  else img.style.display = "none";
+}
+
 function figuresHtml(a) {
   if (!a.figures.length) return "<p class='meta'>No figures saved. Click 'Get full text &amp; figures' (works for open-access PMC articles).</p>";
   return a.figures.map(f => {
-    const an = f.ai_analysis;
+    const an = f.ai_analysis, src = f.web_url || f.image_url;
+    const status = f.web_url ? "(image saved on server - analysis can use the image)"
+      : f.image_url ? "(image linked from PubMed Central - analysis uses the caption unless the server can download it)"
+      : "(caption only - no image available)";
     return `<div class="card" style="background:#fafbff">` +
-      (f.web_url ? `<img class="fig" src="${esc(f.web_url)}" alt="${esc(f.label)}"><br>` : "") +
-      `<b>${esc(f.label)}</b> <span class="meta">${f.web_url ? "(image downloaded)" : "(caption only - no image file)"}</span>` +
+      (src ? `<img class="fig" src="${esc(src)}" alt="${esc(f.label)}" onerror="imgFallback(this)"><br>` : "") +
+      `<b>${esc(f.label)}</b> <span class="meta">${status}</span>` +
+      (f.image_url ? ` <a class="meta" href="${esc(f.image_url)}" target="_blank" rel="noopener">open image link</a>` : "") +
       `<p>${esc(f.caption)}</p>` +
       `<button class="secondary" onclick="analyzeFigure(${f.id}, this)">Analyze figure with Groq</button>` +
       `<div id="fig${f.id}">${an ? figAnalysisHtml(an, f.analysis_type) : ""}</div></div>`;

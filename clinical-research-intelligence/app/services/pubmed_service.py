@@ -24,6 +24,9 @@ from app.services.nct_parser import normalize_text
 
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
+EPMC_BIN = "https://europepmc.org/articles/"          # Europe PMC serves figure files reliably
+NCBI_BIN = "https://pmc.ncbi.nlm.nih.gov/articles/"   # NCBI sometimes blocks automated downloads
+IMAGE_EXT = (".jpg", ".jpeg", ".png", ".gif", ".webp")
 STUDY_TYPE_PRIORITY = ["Randomized Controlled Trial", "Meta-Analysis", "Systematic Review", "Clinical Trial",
                        "Review", "Case Reports", "Observational Study", "Comparative Study"]
 _last_call = [0.0]
@@ -169,8 +172,8 @@ def parse_pmc_xml(xml_text: str, pmcid: str) -> dict:
     for fig in root.iter("fig"):
         graphic = fig.find("graphic")
         href = graphic.get(XLINK_HREF, "") if graphic is not None else ""
-        url = href if href.startswith("http") else (
-            f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/bin/{href}.jpg" if href else "")
+        file_name = href if href.lower().endswith(IMAGE_EXT) else f"{href}.jpg"
+        url = href if href.startswith("http") else (f"{EPMC_BIN}{pmcid}/bin/{file_name}" if href else "")
         figures.append({"label": _text(fig.find("label")), "caption": _text(fig.find("caption")), "image_url": url})
     return {"full_text": "\n\n".join(p for p in paragraphs if p)[:60000], "figures": figures}
 
@@ -183,18 +186,29 @@ def get_pmc_content(pmcid: str) -> dict:
     return parse_pmc_xml(xml_text, pmcid)
 
 
+def image_url_alternatives(url: str) -> list:
+    """Same figure on the other PMC mirror, so we can try both."""
+    if url.startswith(EPMC_BIN):
+        return [url, NCBI_BIN + url[len(EPMC_BIN):]]
+    if url.startswith(NCBI_BIN):
+        return [EPMC_BIN + url[len(NCBI_BIN):], url]
+    return [url]
+
+
 def download_image(url: str):
-    """Return (bytes, mime_type) or (None, '') if the image cannot be downloaded."""
+    """Try each mirror. Return (bytes, mime_type) or (None, '') if none works."""
     if not url:
         return None, ""
-    try:
-        response = httpx.get(url, timeout=30, follow_redirects=True)
-    except httpx.HTTPError:
-        return None, ""
-    mime = response.headers.get("content-type", "").split(";")[0]
-    if response.status_code != 200 or not mime.startswith("image/"):
-        return None, ""
-    return response.content, mime
+    for candidate in image_url_alternatives(url):
+        try:
+            response = httpx.get(candidate, timeout=30, follow_redirects=True,
+                                 headers={"User-Agent": "Mozilla/5.0 (research-demo)"})
+        except httpx.HTTPError:
+            continue
+        mime = response.headers.get("content-type", "").split(";")[0]
+        if response.status_code == 200 and mime.startswith("image/"):
+            return response.content, mime
+    return None, ""
 
 
 # ------------------------------------------------------------------ 5. database
@@ -225,7 +239,7 @@ def save_publication(db: Session, article: dict) -> Publication:
 
 def figure_web_url(local_path: str) -> str:
     """data/figures/<pmid>/<file>  ->  /figures/<pmid>/<file>  (served by main.py)"""
-    if not local_path:
+    if not local_path or not Path(local_path).exists():   # e.g. Render wiped its disk
         return ""
     parts = Path(local_path).parts
     return "/figures/" + "/".join(parts[-2:])
