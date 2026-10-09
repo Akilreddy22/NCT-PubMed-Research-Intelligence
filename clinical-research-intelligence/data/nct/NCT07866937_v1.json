@@ -1,0 +1,182 @@
+{
+ "protocolSection": {
+  "identificationModule": {
+   "nctId": "NCT07866937",
+   "orgStudyIdInfo": {
+    "id": "peppermint and decongestant"
+   },
+   "secondaryIdInfos": [
+    {
+     "id": "peppermint",
+     "type": "REGISTRY",
+     "domain": "peppermint"
+    }
+   ],
+   "organization": {
+    "fullName": "Assiut University",
+    "class": "OTHER"
+   },
+   "briefTitle": "Peppermint and Decongestant Technique on Chronic Sinusitis",
+   "officialTitle": "Clinical Effect of Peppermint and Decongestant Technique on Chronic Sinusitis Among the Elderly",
+   "acronym": "peppermint"
+  },
+  "statusModule": {
+   "statusVerifiedDate": "2026-10",
+   "overallStatus": "NOT_YET_RECRUITING",
+   "expandedAccessInfo": {
+    "hasExpandedAccess": false
+   },
+   "startDateStruct": {
+    "date": "2026-10-01",
+    "type": "ESTIMATED"
+   },
+   "primaryCompletionDateStruct": {
+    "date": "2027-12-01",
+    "type": "ESTIMATED"
+   },
+   "completionDateStruct": {
+    "date": "2027-12-01",
+    "type": "ESTIMATED"
+   },
+   "studyFirstSubmitDate": "2026-10-05",
+   "studyFirstSubmitQcDate": "2026-10-05",
+   "studyFirstPostDateStruct": {
+    "date": "2026-10-08",
+    "type": "ACTUAL"
+   },
+   "lastUpdateSubmitDate": "2026-10-05",
+   "lastUpdatePostDateStruct": {
+    "date": "2026-10-08",
+    "type": "ACTUAL"
+   }
+  },
+  "sponsorCollaboratorsModule": {
+   "responsibleParty": {
+    "type": "PRINCIPAL_INVESTIGATOR",
+    "investigatorFullName": "Tasneem ahmed",
+    "investigatorTitle": "lecterurer",
+    "investigatorAffiliation": "Assiut University"
+   },
+   "leadSponsor": {
+    "name": "Assiut University",
+    "class": "OTHER"
+   }
+  },
+  "oversightModule": {
+   "oversightHasDmc": true,
+   "isFdaRegulatedDrug": false,
+   "isFdaRegulatedDevice": false
+  },
+  "descriptionModule": {
+   "briefSummary": "Chronic rhinosinusitis (CRS) is defined as persistent symptomatic inflammation of the nasal and sinus mucosa that lasts more than 3 months. Epidemiologic studies estimate that 10% to 15% of the US population has CRS with a prevalence of up to 12% in Western populations. CRS is defined as the symptomatic inflammation of the nose and para nasals in uses with the distinction based on the duration of the complaints. CRS is typically described more broadly as an inflammatory disorder and the importance of specific microbial agents in driving the process remains controversial. It is not clear what medical therapy should be followed as the proper treatment for CRS. The most common treatment of CRS includes medical therapy and in cases resistant to medication, endoscopic sinus surgery might be an option. (Kamaneh et al., 2020).",
+   "detailedDescription": "CRS is mostly treated by antibiotics and intranasal steroids but due to limited evidence, results of treatment are unsatisfactory. Previous studies have not confirmed the efficiency of herbal medicine to treat rhinosinusitis, particularly in chronic cases. New investigations recommend that some herbal medicines, either alone or combined with other kinds of treatment might alleviate the symptoms of severe sinus infection (Pleis et al.,2010)."
+  },
+  "conditionsModule": {
+   "conditions": [
+    "Sinus Disease"
+   ]
+  },
+  "designModule": {
+   "studyType": "INTERVENTIONAL",
+   "phases": [
+    "NA"
+   ],
+   "designInfo": {
+    "allocation": "RANDOMIZED",
+    "interventionModel": "PARALLEL",
+    "primaryPurpose": "TREATMENT",
+    "maskingInfo": {
+     "masking": "NONE"
+    }
+   },
+   "enrollmentInfo": {
+    "count": 108,
+    "type": "ESTIMATED"
+   }
+  },
+  "armsInterventionsModule": {
+   "armGroups": [
+    {
+     "label": "study",
+     "type": "EXPERIMENTAL",
+     "description": "The patient should inhale steam from boiled mint leaves twice daily and perform Sinus Self-Massage to relieve nasal and sinus congestion, in addition to taking the prescribed medications.",
+     "interventionNames": [
+      "Behavioral: Sinus self-massage and inhalation of steated boiled peppermint"
+     ]
+    },
+    {
+     "label": "control",
+     "type": "NO_INTERVENTION",
+     "description": "routine hospital care"
+    }
+   ],
+   "interventions": [
+    {
+     "type": "BEHAVIORAL",
+     "name": "Sinus self-massage and inhalation of steated boiled peppermint",
+     "description": "The patient should inhale steam from boiled mint leaves twice daily and perform Sinus Self-Massage to relieve nasal and sinus congestion, in addition to taking the prescribed medications.",
+     "armGroupLabels": [
+      "study"
+     ]
+    }
+   ]
+  },
+  "outcomesModule": {
+   "primaryOutcomes": [
+    {
+     "measure": "rhinosinusitis-specific scale",
+     "description": "the 22-item Sino Nasal Outcome Test (SNOT-22) will be used for measuring quality of life. Each item is categorized into 6 levels (0 for no problem to 5 for the problem is as bad as it can be). The total score is gained by adding the score of each item (range 0-110) with lower scores implying a better health-related quality of life. It covers a wide range of health-related quality of life that may affect patient outcomes. SNOT subscales include 5 questions on rhinological symptoms, 4 questions on ear/facial symptoms, 3 questions on sleep function and 6 questions on psychological function. As with the total SNOT scale, higher scores indicate worse symptoms and lower quality of life",
+     "timeFrame": "3 months"
+    },
+    {
+     "measure": "Visual Analog Pain Scale",
+     "description": "It was adopted from Chiarotto et al. (2019) and used by the researcher to assess the severity of low back pain. Scoring system: The total scores of the visual analog pain scale ranged from (0-10);",
+     "timeFrame": "3 months"
+    }
+   ]
+  },
+  "eligibilityModule": {
+   "eligibilityCriteria": "Inclusion Criteria:\n\n* 1- Elderly patients able to communicate. 2- Elderly patients have chronic rhinosinusitis\n\nExclusion Criteria:\n\n* Hypersensitivity 2-Bronchial asthma and spasmophilia 3- Gastroesophageal reflux disease (heartburn)",
+   "healthyVolunteers": true,
+   "sex": "ALL",
+   "genderBased": true,
+   "genderDescription": "Simple random sample from elderly patients of both genders and diagnosed with chronic rhinosinusitis.",
+   "minimumAge": "65 Years",
+   "maximumAge": "80 Years",
+   "stdAges": [
+    "OLDER_ADULT"
+   ]
+  },
+  "ipdSharingStatementModule": {
+   "ipdSharing": "YES"
+  }
+ },
+ "derivedSection": {
+  "miscInfoModule": {
+   "versionHolder": "2026-10-08"
+  },
+  "conditionBrowseModule": {
+   "meshes": [
+    {
+     "id": "D010254",
+     "term": "Paranasal Sinus Diseases"
+    }
+   ],
+   "ancestors": [
+    {
+     "id": "D009668",
+     "term": "Nose Diseases"
+    },
+    {
+     "id": "D012140",
+     "term": "Respiratory Tract Diseases"
+    },
+    {
+     "id": "D010038",
+     "term": "Otorhinolaryngologic Diseases"
+    }
+   ]
+  }
+ },
+ "hasResults": false
+}

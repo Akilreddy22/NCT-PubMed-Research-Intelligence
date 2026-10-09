@@ -49,7 +49,7 @@ function figuresHtml(a) {
       `<b>${esc(f.label)}</b> <span class="meta">${status}</span>` +
       (f.image_url ? ` <a class="meta" href="${esc(f.image_url)}" target="_blank" rel="noopener">open image link</a>` : "") +
       `<p>${esc(f.caption)}</p>` +
-      `<button class="secondary" onclick="analyzeFigure(${f.id}, this)">Analyze figure with Groq</button>` +
+      `<button class="secondary" onclick="analyzeFigure(${f.id}, this)">Analyze figure with Ai</button>` +
       `<div id="fig${f.id}">${an ? figAnalysisHtml(an, f.analysis_type) : ""}</div></div>`;
   }).join("");
 }
@@ -70,10 +70,10 @@ function renderDetail(a) {
     `<b>DOI</b><div>${esc(a.doi || "n/a")}</div><b>Study type</b><div>${esc(a.study_type)}</div><b>Topic</b><div>${esc(a.research_topic)}</div>` +
     `<b>Keywords</b><div>${esc(a.keywords.join(", "))}</div><b>References</b><div>${a.references.length} listed${a.has_full_text ? " &middot; full text saved" : ""}</div></div>` +
     `<h4>Abstract</h4><p>${nl2br(a.abstract)}</p>` +
-    `<p><button id="btnAnalyze">Analyze with Groq</button> <button class="secondary" id="btnFigs">Get full text &amp; figures</button></p>` +
+    `<p><button id="btnAnalyze">Analyze with Ai</button> <button class="secondary" id="btnFigs">Get full text &amp; figures</button></p>` +
     `<div id="dmsg" class="msg"></div>` +
     `<h4>AI analysis</h4><div id="analysis">${analysisHtml(a.analysis)}</div><h4>Figures</h4><div id="figures">${figuresHtml(a)}</div>`;
-  $("btnAnalyze").onclick = e => withButton(e.target, "Asking Groq...", async () => {
+  $("btnAnalyze").onclick = e => withButton(e.target, "Asking Ai...", async () => {
     showMsg("dmsg", "");
     try { const r = await jsonPost("/api/pubmed/analyze", { pmid: a.pmid }); $("analysis").innerHTML = analysisHtml({ ...r, model_used: r.model }); }
     catch (err) { showMsg("dmsg", err.message); }
@@ -94,7 +94,7 @@ async function openArticle(i) {
 }
 
 async function analyzeFigure(id, button) {
-  await withButton(button, "Asking Groq...", async () => {
+  await withButton(button, "Asking Ai...", async () => {
     try {
       const r = await jsonPost("/api/pubmed/analyze-figure", { figure_id: id });
       $("fig" + id).innerHTML = (r.note ? `<div class="msg info">${esc(r.note)}</div>` : "") + figAnalysisHtml(r.analysis, r.analysis_type);

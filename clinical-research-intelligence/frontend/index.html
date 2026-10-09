@@ -17,7 +17,7 @@
   </div>
   <div class="card"><h3>How it works</h3>
     <p><span class="pill nonai">Python only</span> HTML parsing, data extraction, normalization, version comparison, database, filtering.</p>
-    <p><span class="pill ai">Groq AI</span> Article summaries, trial understanding, figure interpretation.</p></div>
+    <p><span class="pill ai"> AI</span> Article summaries, trial understanding, figure interpretation.</p></div>
 </main>
 <script src="/static/js/common.js"></script>
 <script>
@@ -28,7 +28,6 @@
     document.getElementById("pub").textContent = s.pubmed_articles;
     document.getElementById("trial").textContent = s.clinical_trials;
     const h = await api("/api/health"), g = document.getElementById("groq");
-    g.textContent = h.groq_configured ? "Groq connected" : "Groq key not set (AI buttons disabled)";
     g.className = "pill " + (h.groq_configured ? "added" : "modified");
   } catch (e) { console.log(e); }
 })();
